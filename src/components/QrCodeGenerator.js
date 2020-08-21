@@ -23,7 +23,6 @@ class QrCodeGenerator extends React.Component {
     }
         return result;
     }
-     
 
     generateCode = () => {
         this.setState({ qrCode: this.makeId(this.state.qrCodeLength) })
@@ -32,18 +31,18 @@ class QrCodeGenerator extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={ this.generateCode }>Generate code</button>
+                <button class="generate-code-btn" onClick={ this.generateCode }>Generate code</button>
                  <div class="row">
-                    <div class="col qrcode-value-container">
+                    <div class="col bordered-black qrcode-value-container">
                         <p>{this.state.qrCode}</p>
                     </div>
                     
-                    <div class="col bordered-black">
+                    <div class="col">
                     <QRCode
                         bgColor="#FFFFFF"
                         fgColor="#000000"
                         level="Q"
-                        style={{ width: 256 }}
+                        style={{ width: 400, height: 400 }}
                         value={this.state.qrCode}
                     />
                     </div>
